@@ -30,14 +30,14 @@ def owlbeep_treatment(file_name):
 
     fig = plt.figure()
     fig.suptitle(file_name)
-    ax, ax2 = fig.subplots(1, 2)
+    ax, ax2, ax3 = fig.subplots(1, 3)
     ax.plot(x_fft, abs(y_fft))
     ax.set_title("pre cut")
     f0, i0 = get_max_freq(x_fft, y_fft)
 
     fft_mask = np.zeros_like(x_fft)
 
-    range_arround_the_fn = 30
+    range_arround_the_fn = 50
 
     for i in range(1, 1000):
         fft_mask[
@@ -60,8 +60,11 @@ def owlbeep_treatment(file_name):
 
     y_fft[fft_mask] = 0
 
-    ax2.plot(x_fft, abs(beeps))
-    ax2.set_title("post cut")
+    ax2.plot(x_fft, abs(owl_and_birds))
+    ax2.set_title("Owl")
+
+    ax3.plot(x_fft, abs(beeps))
+    ax.set_title("Beeps")
 
     beeps = scipy.fft.irfft(beeps)
     owl_and_birds = scipy.fft.irfft(owl_and_birds)
