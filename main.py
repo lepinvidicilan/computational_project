@@ -64,7 +64,7 @@ def owlbeep_treatment(file_name):
     ax2.set_title("Owl")
 
     ax3.plot(x_fft, abs(beeps))
-    ax.set_title("Beeps")
+    ax3.set_title("Beeps")
 
     beeps = scipy.fft.irfft(beeps)
     owl_and_birds = scipy.fft.irfft(owl_and_birds)
