@@ -7,4 +7,6 @@ requires-python = ">=3.11"
 dependencies = [
     "matplotlib>=3.10.7",
     "scipy>=1.16.3",
+    "simpleaudio>=1.0.4",
+    "tqdm>=4.67.1",
 ]
